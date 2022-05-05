@@ -13,6 +13,7 @@ const page1 = document.getElementById("page-1");
 const page2 = document.getElementById("page-2");
 const page4 = document.getElementById("page-4");
 const menu = document.getElementById("menu");
+const menuAction = document.getElementById("menuAction");
 
 btnBackToHome.addEventListener("click", topFunction)
 
@@ -114,5 +115,10 @@ for (var i = 0; i < items.length; i++) {
         }
         console.log("hola");
         this.classList.add("active");
+        menu.classList.remove("show");
     });
 }
+
+menuAction.addEventListener("click", function () {
+    menu.classList.toggle("show");
+})
