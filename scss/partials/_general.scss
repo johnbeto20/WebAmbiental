@@ -136,14 +136,19 @@ body {
         z-index: 2;
         margin-bottom: 40px;
 
+        @include media(md) {
+            z-index: 3;
+        }
+
         a {
             transition: $transitionMode;
             font-size: var(--size-16);
+            z-index: 2;
 
             &:hover {
                 text-decoration: underline;
-                box-shadow: 0 5px 8px rgba($c-black, 0.4);
                 transform: translate(0, -5px);
+                filter: drop-shadow(5px 8px 10px rgba($c-black, 0.4));
             }
 
             @include media(sm) {
@@ -163,6 +168,17 @@ body {
             }
         }
     }
+
+    &__social-link {
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+        margin-bottom: 40px;
+
+        @include media(md) {
+            margin-bottom: 20px;
+        }
+    }
 }
 
 .grafic-interactive {
@@ -178,7 +194,8 @@ body {
 
     @include media(md) {
         max-width: 100%;
-        margin: 140px auto 0px auto;
+        margin: 160px auto 0px auto;
+        width: 100%;
     }
 
     &__world {
@@ -472,7 +489,6 @@ body {
     width: 100%;
     align-items: flex-start;
     background-color: $c-white;
-    height: 100%;
 
     &__h-full {
         height: 100%;
@@ -980,7 +996,7 @@ body {
 
 .video {
     border: var(--gray-300) solid 1px;
-    width: 70%;
+    width: 80%;
     height: 250px;
     margin: 20px auto;
     background: var(--gray-400);
@@ -1021,7 +1037,7 @@ body {
     .obj-2 {
         width: 250px;
         display: block;
-        margin: 80px 0 0 150px;
+        margin: 0 0 0 150px;
 
         .c {
             fill: #d4d4d4;
@@ -1068,6 +1084,42 @@ body {
         .col {
             @include media(lg) {
                 scroll-snap-align: start;
+            }
+        }
+    }
+}
+
+.social-icons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        display: inline-block;
+        margin-right: 20px;
+
+        &:nth-child(2) {
+            margin-right: 10px;
+        }
+
+        &:last-child {
+            margin: 0;
+        }
+
+        a {
+            display: block;
+            width: 24px;
+            height: 24px;
+
+            svg {
+                fill: #9e9e9e;
+                transition: $transitionMode;
+            }
+
+            &:hover {
+                svg {
+                    fill: $c-white;
+                }
             }
         }
     }

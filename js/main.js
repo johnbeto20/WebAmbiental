@@ -1,7 +1,5 @@
 document.addEventListener("mousemove", parallax);
 const elem0 = document.getElementById("element-0");
-const elem = document.getElementById("element-1");
-const elem2 = document.getElementById("element-2");
 const elem3 = document.getElementById("element-3");
 const elem4 = document.getElementById("element-4");
 const elem5 = document.getElementById("element-5");
@@ -30,11 +28,9 @@ function parallax(e) {
     let _depth3 = `${50 - (_mouseX - _w) * 0.05}px, ${50 - (_mouseY - _h) * 0.05
         }px`;
     let x = `${_depth}`;
-    elem.style.transform = "translate(" + x + ")";
     let x_min = `${_depth2}`;
     let x_medium = `${_depth3}`;
     elem0.style.transform = "translate(" + x_medium + ")";
-    elem2.style.transform = "translate(" + x_min + ")";
     elem3.style.transform = "translate(" + x_min + ")";
     elem4.style.transform = "translate(" + x_medium + ")";
     elem5.style.transform = "translate(" + x_medium + ")";

@@ -79,6 +79,10 @@
         fill: var(--gray-200);
         transition: $transitionMode;
 
+        @include media(md) {
+            fill: $c-white;
+        }
+
         &-1 {
             transform: translate(250px, 100px);
         }
@@ -228,6 +232,10 @@
         opacity: 0;
         transition: $transitionMode;
 
+        @include media(md) {
+            opacity: 1;
+        }
+
         &-1 {
             fill: url(#status-hover-1);
 
@@ -253,33 +261,61 @@
         .element--icon {
             opacity: 1;
             transform: translate(0, 0);
+
+            @include media(md) {
+                opacity: 0;
+            }
         }
 
         .element--hover {
             opacity: 1;
+
+            @include media(md) {
+                opacity: 0;
+            }
         }
 
         .element--overlay {
             opacity: 1;
             transform: translate(0, 0) scale(1);
+
+            @include media(md) {
+                opacity: 0;
+            }
         }
 
         .element--contInfo {
             opacity: 1;
             transform: scale(1) translate(0, 0);
+
+            @include media(md) {
+                opacity: 0;
+            }
         }
 
         .element-text {
             opacity: 1;
             transform: translate(0, 0);
+
+            @include media(md) {
+                opacity: 0;
+            }
         }
 
         .element-title {
             fill: $c-white;
+
+            @include media(md) {
+                fill: currentColor;
+            }
         }
 
         .element-btn {
             opacity: 1;
+
+            @include media(md) {
+                opacity: 0;
+            }
         }
     }
 }
